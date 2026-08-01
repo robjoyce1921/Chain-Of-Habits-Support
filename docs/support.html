@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Help and support for Chain Of Habits." />
+  <link rel="canonical" href="https://robjoyce1921.github.io/Chain-Of-Habits-Support/support.html" />
+  <title>Chain Of Habits Help &amp; Support</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --card: #ffffff;
+      --text: #1a1d22;
+      --muted: #5a6472;
+      --accent: #0a84ff;
+      --border: #dde2ea;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    h1, h2, h3 { margin: 0 0 10px; line-height: 1.25; }
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.25rem; margin-top: 4px; }
+    h3 { font-size: 1.05rem; margin-top: 8px; }
+    p, li { color: var(--text); }
+    .muted { color: var(--muted); }
+    a { color: var(--accent); text-decoration: underline; text-underline-offset: 0.15em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    ul, ol { margin: 8px 0 0 20px; padding: 0; }
+    .meta { margin-top: 8px; font-size: 0.95rem; color: var(--muted); }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+      background: #eef3ff;
+      border-radius: 6px;
+      padding: 0 6px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card">
+      <h1>Help &amp; Support</h1>
+      <p class="muted">Chain of Habits</p>
+      <p class="meta"><strong>Last updated:</strong> August 1, 2026</p>
+      <nav aria-label="Support navigation">
+        <a href="https://robjoyce1921.github.io/Chain-Of-Habits-Support/privacy.html">Privacy Policy</a>
+        ·
+        <a href="https://apps.apple.com/us/app/chain-of-habits/id6759208470">View on the App Store</a>
+      </nav>
+    </section>
+
+    <section class="card">
+      <h2>Quick Start</h2>
+      <ol>
+        <li>Tap <strong>Add Habit</strong> to create your first habit.</li>
+        <li>Choose Every day, Weekdays, Weekends, one exact weekday, or a custom set such as Tuesday and Thursday, then set reminder times.</li>
+        <li>Tap a binary habit to mark it complete, or tap a daily counter to log one unit. After counter progress begins, use the visible minus button to remove one.</li>
+        <li>Use the date picker to backfill previous days when needed.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Core Features</h2>
+      <ul>
+        <li><strong>One-tap completion:</strong> Tap again to uncheck if pressed by mistake.</li>
+        <li><strong>Goals:</strong> Link habits to goals and track weekly support.</li>
+        <li><strong>Momentum:</strong> The 12-week heatmap and complete-calendar-week feedback show consistency over time. Select a heatmap day for its breakdown.</li>
+        <li><strong>Friction alerts:</strong> Shows habits that are frequently missed and suggests adjustments.</li>
+        <li><strong>Flexible schedules:</strong> Use quick Every day, Weekdays, Weekends, and single-day choices; combine specific weekdays; or track weekly, monthly, every-N-days, and N-times-per-week/month habits.</li>
+        <li><strong>Optional days:</strong> A habit that is not due on the selected day uses lighter text and an explicit Not due label. It does not count against that day's score, but you can still log it.</li>
+        <li><strong>Reminder controls:</strong> Add precise reminder times and an optional secondary reminder delay that stays within the same local day.</li>
+        <li><strong>CSV recovery:</strong> Export habit/completion data and restore it later through a validated, merge-only review.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Cloud Sync (CloudKit)</h2>
+      <p>
+        Chain Of Habits saves your data locally first. The production app enables automatic background CloudKit sync by default.
+        When you are signed in to iCloud and CloudKit is available, supported habit, goal, settings, and completion state can sync
+        through your private iCloud database. The app remains usable if iCloud is unavailable or the device is offline.
+      </p>
+      <p>
+        Development and UI-test builds can explicitly disable CloudKit. Open <strong>Settings → Support → View Cloud Sync Debug
+        Info</strong> to review the current account and sync status. CSV export and import remain a user-controlled backup and
+        restore path whether CloudKit is available or not.
+      </p>
+      <h3>If the app cannot sync, check:</h3>
+      <ul>
+        <li>You are signed in to iCloud on the device.</li>
+        <li>Network access is available.</li>
+        <li>View Cloud Sync Debug Info for the app's current account and sync status.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Export, Restore, and Reset</h2>
+      <ul>
+        <li><strong>Export Data (CSV):</strong> Settings → Data → Export Data (CSV)</li>
+        <li><strong>Import Data (CSV):</strong> Settings → Data → Import Data (CSV)</li>
+        <li><strong>Clear All Data:</strong> Settings → Data → Clear All Data (with confirmation)</li>
+      </ul>
+      <p>
+        Export creates one UTF-8 CSV containing a habits table, one physically blank separator record, and a completions table.
+        Import accepts that combined file, or exactly two files selected together containing one habits table and one completions table.
+        The app identifies tables by exact headers, not filenames.
+      </p>
+      <p>
+        Included habit data covers identity and text, active/notification state, schedules and every-N anchors, primary/secondary/weekend reminders,
+        sort order, icon/color, and daily counter target/unit/rule. Included completion data covers habit ID, ISO-8601 time, source, and unit count.
+        Goals/links; Settings/appearance; experiments/reports; insight snoozes, dismissals, and feedback recency; milestone seen/queue/share
+        presentation state; notification authorization; CloudKit diagnostics; and other device-local records are not part of the CSV.
+        Pending notifications and completion sync work are derived after import rather than restored from the file.
+      </p>
+      <p>
+        Before any write, the review shows selected-file classification, active/inactive and completion totals, adds/updates, legacy warnings,
+        merge-only behavior, and exclusions. Confirmation adds or updates imported identities in one atomic local save. It never deletes data merely
+        because it was omitted. Completion changes stay pending locally and are attempted later only when CloudKit sync is enabled and available;
+        the local result never claims that a cloud upload completed.
+        The aggregate limit is 5 MiB and 100,000 CSV records.
+      </p>
+      <p class="muted">
+        Clear All Data removes visible habits, goals, completion history, and resets settings. Inactive habit deletion tombstones and completion
+        sync bookkeeping may remain locally to prevent deleted cloud data from returning; this action is not an immediate physical purge of every row.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Troubleshooting</h2>
+      <h3>App launches but no habits appear</h3>
+      <p>Create a habit first using <strong>Add Habit</strong>. The list is empty until at least one habit exists.</p>
+
+      <h3>Unexpected friction alert for a new habit</h3>
+      <p>New habits are evaluated from first completion onward. If behavior looks incorrect, update to latest build.</p>
+
+      <h3>Notifications not firing</h3>
+      <ul>
+        <li>Enable notifications in app settings and iOS settings.</li>
+        <li>Ensure at least one reminder time is configured for the habit.</li>
+        <li>Secondary reminders only appear after a configured primary reminder and are not scheduled at or after the next local day boundary.</li>
+      </ul>
+
+      <h3>A habit says Not due today</h3>
+      <p>
+        This means the selected date is outside that habit's schedule. Its lighter text is an obligation cue, not a disabled state:
+        you may still mark it complete or log counter progress, and the optional log will not add the habit to that day's due total.
+      </p>
+
+      <h3>A completion or quick log could not be saved</h3>
+      <p>
+        Keep the app open and read the error shown on screen. A failed counter, widget, or deep-link update does not advance progress
+        or claim success. Retry after checking available device storage and, for cross-device transport, the Cloud Sync Debug status.
+      </p>
+
+      <h3>Restore an export</h3>
+      <ol>
+        <li>Choose the newest complete combined export, or select its complementary habits and completions files together.</li>
+        <li>Check filenames/table classifications, totals, add/update counts, warnings, and exclusions in the review.</li>
+        <li>Choose <strong>Confirm Import</strong> for the local merge. Canceling or any validation error makes no import change.</li>
+        <li>Keep Settings open for the result. A successful result means the atomic local restore completed. Completion updates stay pending locally and are attempted only when CloudKit sync is enabled and available.</li>
+        <li>Use <strong>View Cloud Sync Debug Info</strong> to monitor subsequent synchronization.</li>
+      </ol>
+      <p class="muted">
+        The system document picker grants temporary access only to files you select. Chain of Habits copies bounded data, releases that access on
+        success, error, or cancellation, and does not keep permission to browse the rest of the provider.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Contact Support</h2>
+      <p>
+        Need help or want to report a bug?
+        <br />
+        <a href="mailto:AppleFeedback@robjoyce.com">AppleFeedback@robjoyce.com</a>
+      </p>
+      <p><a href="https://robjoyce1921.github.io/Chain-Of-Habits-Support/privacy.html">Read the Chain Of Habits Privacy Policy</a>.</p>
+    </section>
+  </main>
+</body>
+</html>

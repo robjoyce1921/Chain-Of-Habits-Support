@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Privacy policy for Chain Of Habits." />
+  <link rel="canonical" href="https://robjoyce1921.github.io/Chain-Of-Habits-Support/privacy.html" />
+  <title>Chain of Habits Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --card: #ffffff;
+      --text: #1a1d22;
+      --muted: #5a6472;
+      --accent: #0a84ff;
+      --border: #dde2ea;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    h1, h2 { margin: 0 0 10px; line-height: 1.25; }
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.25rem; margin-top: 4px; }
+    p, li { color: var(--text); }
+    .muted { color: var(--muted); }
+    a { color: var(--accent); text-decoration: underline; text-underline-offset: 0.15em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    ul { margin: 8px 0 0 20px; padding: 0; }
+    .meta { margin-top: 8px; font-size: 0.95rem; color: var(--muted); }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+      background: #eef3ff;
+      border-radius: 6px;
+      padding: 0 6px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card">
+      <h1>Privacy Policy</h1>
+      <p class="muted">Chain of Habits</p>
+      <p class="meta"><strong>Effective date:</strong> February 15, 2026</p>
+      <p class="meta"><strong>Last updated:</strong> August 1, 2026</p>
+      <nav aria-label="Policy navigation">
+        <a href="https://robjoyce1921.github.io/Chain-Of-Habits-Support/support.html">Help &amp; Support</a>
+        ·
+        <a href="https://apps.apple.com/us/app/chain-of-habits/id6759208470">View on the App Store</a>
+      </nav>
+    </section>
+
+    <section class="card">
+      <h2>Overview</h2>
+      <p>
+        Chain of Habits is a habit tracking app focused on daily execution. This policy explains what data the app stores,
+        how it is used, and your choices.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Data We Store</h2>
+      <p>The app stores information needed to provide core functionality, including:</p>
+      <ul>
+        <li>Habits you create (identity, title, category, notes, schedule, reminder configuration, icon/color, daily target/unit/rule, ordering, and active status).</li>
+        <li>Goals you create and linked habit relationships.</li>
+        <li>Completion history (date/time, source such as app, widget, sync, or restore, and unit count).</li>
+        <li>Settings (appearance, notification, weekly summary, Last Call, and coaching-copy preferences).</li>
+        <li>Device-local experiment, feedback-recency, and milestone presentation state used by in-app coaching and celebrations.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>How Data Is Used</h2>
+      <ul>
+        <li>To display your habit dashboard, streaks, momentum heatmap, and weekly execution feedback.</li>
+        <li>To schedule local notifications and same-day follow-up reminders you request.</li>
+        <li>To synchronize supported app data across your devices through Apple CloudKit when iCloud is signed in and available.</li>
+        <li>To export and restore your own habit/completion data (CSV) when you choose.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>CSV Export and Import</h2>
+      <p>
+        A CSV export contains habits and completion history. It does not contain goals/links; Settings/appearance; experiments/reports;
+        insight snoozes, dismissals, or feedback recency; milestone seen/queue/share presentation state; notification authorization;
+        CloudKit diagnostics; or other device-local records. Pending notifications and completion sync work are derived after import,
+        not restored from CSV.
+      </p>
+      <p>
+        Import accepts one combined export or exactly one habits CSV plus one completions CSV selected together. The app validates
+        the complete selection, shows a review, and performs a merge-only atomic local update after confirmation. Matching records
+        may be updated and missing records added; unrelated or omitted app records are not deleted. Completion changes remain pending
+        locally and are attempted later when CloudKit sync is enabled and available. Production enables this background sync by default;
+        a successful local import does not confirm upload.
+      </p>
+      <p>
+        File access is temporary and security scoped to the URLs you select in Apple's document picker. The app copies at most
+        5 MiB and 100,000 CSV records in aggregate for validation, releases file access on success, error, or cancellation, and does
+        not retain permission to browse the surrounding storage provider. CSV files you export or keep in another app/provider are
+        governed by the privacy and retention choices of that destination.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>CloudKit / iCloud Sync</h2>
+      <p>
+        Chain Of Habits saves its working data locally first. The production app enables automatic background CloudKit sync by
+        default. When you are signed in to iCloud and CloudKit is available, supported habit, goal, settings, and completion state
+        can be transmitted to your private iCloud database and synchronized across your devices. The app remains usable when
+        iCloud is signed out, restricted, temporarily unavailable, or offline.
+      </p>
+      <p>
+        Development and UI-test configurations can explicitly disable CloudKit. CloudKit data handling is governed by Apple's
+        terms and privacy practices. The in-app Cloud Sync Debug view reports the current account and sync status; a local save or
+        CSV import result does not by itself confirm that a cloud upload completed.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Data Sharing</h2>
+      <p>We do not sell your data. The app does not use third-party ad networks.</p>
+      <p>
+        Data may be transmitted to Apple services for the automatic iCloud/CloudKit sync described above and for standard Apple
+        platform services.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Data Retention and Deletion</h2>
+      <ul>
+        <li>Your data is kept until you delete it.</li>
+        <li>You can use <strong>Settings → Clear All Data</strong> to remove visible habits, goals, completion history, and reset settings locally.</li>
+        <li>Inactive habit deletion tombstones and completion sync bookkeeping may remain locally to prevent deleted cloud data from returning; Clear All Data is not an immediate physical purge of every row.</li>
+        <li>You can remove the app to delete local data from a device.</li>
+        <li>Cloud data may persist according to Apple CloudKit behavior and your iCloud account state.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Children's Privacy</h2>
+      <p>
+        The app is not directed to children under 13 and does not knowingly collect personal information from children.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Changes to This Policy</h2>
+      <p>
+        This policy may be updated from time to time. The “Last updated” date will change when updates are made.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Contact</h2>
+      <p>
+        For privacy questions, contact the developer at:
+        <br />
+        <a href="mailto:AppleFeedback@robjoyce.com">AppleFeedback@robjoyce.com</a>
+      </p>
+      <p><a href="https://robjoyce1921.github.io/Chain-Of-Habits-Support/support.html">Visit Chain Of Habits Help &amp; Support</a>.</p>
+    </section>
+  </main>
+</body>
+</html>
