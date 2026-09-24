@@ -59,7 +59,7 @@
       <h1>Privacy Policy</h1>
       <p class="muted">Chain of Habits</p>
       <p class="meta"><strong>Effective date:</strong> February 15, 2026</p>
-      <p class="meta"><strong>Last updated:</strong> August 1, 2026</p>
+      <p class="meta"><strong>Last updated:</strong> September 24, 2026</p>
       <nav aria-label="Policy navigation">
         <a href="https://robjoyce1921.github.io/Chain-Of-Habits-Support/support.html">Help &amp; Support</a>
         ·
@@ -84,6 +84,7 @@
         <li>Completion history (date/time, source such as app, widget, sync, or restore, and unit count).</li>
         <li>Settings (appearance, notification, weekly summary, Last Call, and coaching-copy preferences).</li>
         <li>Device-local experiment, feedback-recency, and milestone presentation state used by in-app coaching and celebrations.</li>
+        <li>Bounded on-device notification and sync diagnostic history, described below.</li>
       </ul>
     </section>
 
@@ -102,7 +103,7 @@
       <p>
         A CSV export contains habits and completion history. It does not contain goals/links; Settings/appearance; experiments/reports;
         insight snoozes, dismissals, or feedback recency; milestone seen/queue/share presentation state; notification authorization;
-        CloudKit diagnostics; or other device-local records. Pending notifications and completion sync work are derived after import,
+        CloudKit and notification diagnostics; or other device-local records. Pending notifications and completion sync work are derived after import,
         not restored from CSV.
       </p>
       <p>
@@ -136,6 +137,32 @@
     </section>
 
     <section class="card">
+      <h2>On-Device Notification Diagnostics</h2>
+      <p>
+        Version 2.3 records normal reminder scheduling automatically to help investigate missing alerts. The local journal keeps up to
+        40 operation events and a separately retained latest failure, plus up to 120 distinct normal alert records with planned times,
+        scheduling outcomes, and available observations from the operating system. Repeated rebuilds are coalesced; older entries are
+        removed as these limits are reached. The journal persists between app launches and is not included in CloudKit sync or CSV backups.
+      </p>
+      <p>
+        Settings → Notification Diagnostics can read notification authorization and delivery settings, pending requests, and retained
+        delivered requests. It also shows app/build and OS information, time zone, aggregate habit/configuration information, controlled
+        sync stage and elapsed time, local reminder status, and safe error domain/code summaries. Passive refresh records observations
+        without requesting notification permission or scheduling reminders. Local reminder scheduling works independently of cloud waits.
+      </p>
+      <p>
+        Diagnostic history and exported reports omit habit names and notification content. Request correlation uses a local hashed key;
+        raw request identifiers and those correlation hashes are omitted from reports. An accepted scheduling request or a retained
+        delivered entry does not establish that a banner, sound, or Watch alert appeared. Missing entries remain inconclusive.
+      </p>
+      <p>
+        These reports are not transmitted automatically. You choose whether to copy a report to the clipboard or share it with another
+        app or support recipient. Once you send or save a report, its handling is governed by your chosen recipient or destination.
+        The optional ten-second notification test is a separate, explicit action and does not send a report to the developer.
+      </p>
+    </section>
+
+    <section class="card">
       <h2>Data Sharing</h2>
       <p>We do not sell your data. The app does not use third-party ad networks.</p>
       <p>
@@ -147,7 +174,7 @@
     <section class="card">
       <h2>Data Retention and Deletion</h2>
       <ul>
-        <li>Your data is kept until you delete it.</li>
+        <li>Your habit, goal, and completion data is kept until you delete it. Diagnostic history is bounded as described above and older entries can be replaced during normal use.</li>
         <li>You can use <strong>Settings → Clear All Data</strong> to remove visible habits, goals, completion history, and reset settings locally.</li>
         <li>Inactive habit deletion tombstones and completion sync bookkeeping may remain locally to prevent deleted cloud data from returning; Clear All Data is not an immediate physical purge of every row.</li>
         <li>You can remove the app to delete local data from a device.</li>

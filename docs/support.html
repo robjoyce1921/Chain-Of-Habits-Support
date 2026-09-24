@@ -59,7 +59,7 @@
     <section class="card">
       <h1>Help &amp; Support</h1>
       <p class="muted">Chain of Habits</p>
-      <p class="meta"><strong>Last updated:</strong> August 1, 2026</p>
+      <p class="meta"><strong>Last updated:</strong> September 24, 2026</p>
       <nav aria-label="Support navigation">
         <a href="https://robjoyce1921.github.io/Chain-Of-Habits-Support/privacy.html">Privacy Policy</a>
         ·
@@ -96,11 +96,11 @@
       <p>
         Chain Of Habits saves your data locally first. The production app enables automatic background CloudKit sync by default.
         When you are signed in to iCloud and CloudKit is available, supported habit, goal, settings, and completion state can sync
-        through your private iCloud database. The app remains usable if iCloud is unavailable or the device is offline.
+        through your private iCloud database. The app remains usable if iCloud is unavailable or the device is offline. In version 2.3, local reminder scheduling runs independently of cloud waits, including later edits and completion changes while the same sync is still waiting.
       </p>
       <p>
         Development and UI-test builds can explicitly disable CloudKit. Open <strong>Settings → Support → View Cloud Sync Debug
-        Info</strong> to review the current account and sync status. CSV export and import remain a user-controlled backup and
+        Info</strong> to review provider account and sync information when available. <strong>Settings → Notification Diagnostics</strong> shows the app’s current sync stage and elapsed time separately from local reminder status, even while provider information is waiting. CSV export and import remain a user-controlled backup and
         restore path whether CloudKit is available or not.
       </p>
       <h3>If the app cannot sync, check:</h3>
@@ -127,7 +127,7 @@
         Included habit data covers identity and text, active/notification state, schedules and every-N anchors, primary/secondary/weekend reminders,
         sort order, icon/color, and daily counter target/unit/rule. Included completion data covers habit ID, ISO-8601 time, source, and unit count.
         Goals/links; Settings/appearance; experiments/reports; insight snoozes, dismissals, and feedback recency; milestone seen/queue/share
-        presentation state; notification authorization; CloudKit diagnostics; and other device-local records are not part of the CSV.
+        presentation state; notification authorization; CloudKit and notification diagnostics; and other device-local records are not part of the CSV.
         Pending notifications and completion sync work are derived after import rather than restored from the file.
       </p>
       <p>
@@ -152,11 +152,30 @@
       <p>New habits are evaluated from first completion onward. If behavior looks incorrect, update to latest build.</p>
 
       <h3>Notifications not firing</h3>
-      <ul>
-        <li>Enable notifications in app settings and iOS settings.</li>
-        <li>Ensure at least one reminder time is configured for the habit.</li>
-        <li>Secondary reminders only appear after a configured primary reminder and are not scheduled at or after the next local day boundary.</li>
-      </ul>
+      <ol>
+        <li>Check the app’s notification toggle and the habit’s reminder times in Add/Edit Habit. Confirm the habit is active, due, and still incomplete for the reminder day.</li>
+        <li>Open <strong>Settings → Notification Diagnostics</strong> and choose <strong>Refresh</strong>. Check authorization, alert/sound settings, pending requests, local reminder status, and the normal automatic alert history.</li>
+        <li>Use <strong>Open iOS Notification Settings</strong> to review system permissions. Presentation and paired Apple Watch routing also depend on system settings; the diagnostic report cannot inspect every Focus or Watch setting.</li>
+        <li>Review a normal reminder’s planned time and scheduling outcome. An OS-accepted request means iOS accepted scheduling, not that a banner, sound, or Watch alert appeared. A retained delivered entry is an observation; a missing entry does not prove either success or failure.</li>
+        <li>If you need help, use <strong>Copy</strong> or <strong>Share</strong> in Notification Diagnostics and send the report to the support address below. Include approximately when you expected an alert and what you observed. Review any additional text or screenshots before sending.</li>
+      </ol>
+      <p>
+        Normal operations are logged automatically; you do not need to press a test button to collect this history. The on-device log keeps
+        up to 40 operation events, a separately retained latest failure, and up to 120 distinct normal alert records with planned times.
+        Repeated rebuilds are coalesced, and older entries are removed as the bounded history fills. Refresh only reads settings and queues
+        and records observations; it does not request permission or reschedule reminders.
+      </p>
+      <p>
+        The optional ten-second test is separate from your habit reminders. It requires existing iOS authorization, uses default sound and
+        Time Sensitive priority, and protects existing reminder capacity. Its result reports scheduling acceptance, not presentation.
+        Secondary reminders follow configured primary reminders and stay within the same local day; completing a habit before its reminder
+        time suppresses pending same-day reminders.
+      </p>
+      <p>
+        Diagnostic reports omit habit names, notification content, raw request identifiers, and local correlation hashes. They include
+        app/build and OS information, time zone, aggregate configuration, planned times, safe error codes, and scheduling/sync state.
+        Reports are not sent automatically. A waiting cloud stage identifies where work is paused, not the cause of the pause.
+      </p>
 
       <h3>A habit says Not due today</h3>
       <p>
